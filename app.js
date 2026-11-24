@@ -11,6 +11,8 @@ fetch("data/accomplishments.json", { cache: "no-cache" })
     var items = data.accomplishments
       .filter(function (a) { return a.status === "active"; })
       .map(function (a) { return { n: a.number, vibe: a.vibe, title: a.title, proof: a.proof, capstone: a.capstone, series: a.series }; });
+    // Show in number order, whatever order the file happens to be in.
+    items.sort(function (x, y) { return x.n - y.n; });
     init(data.vibes, items);
   })
   .catch(function () {

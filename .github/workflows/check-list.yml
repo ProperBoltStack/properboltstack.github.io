@@ -1,0 +1,17 @@
+# Runs scripts/check_list.py on every push and pull request.
+# A red X next to a commit on GitHub means the list has a problem; click it to see which one.
+name: Check the list
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/check_list.py
