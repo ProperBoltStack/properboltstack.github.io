@@ -14,10 +14,11 @@
       "note": "Red. These only get stamped in person, at a lot day or a closed venue."
     },
     {
-      "key": "distance",
-      "name": "Distance",
+      "key": "seat-time",
+      "name": "Seat Time",
       "color": "#2f6fd6",
-      "note": "Blue. For those who like to measure. Seat time counts too, not just miles."
+
+      "note": "Blue. Miles or hours both count. An hour of riding counts as 30 miles, and you can mix the two on the running totals. If you're just sitting there, people will know."
     },
     {
       "key": "community",
@@ -385,9 +386,9 @@
     {
       "number": 31,
       "series": "core",
-      "vibe": "distance",
-      "title": "1,000 miles since your Sprout",
-      "proof": "Odometer photos or GPS logs",
+      "vibe": "seat-time",
+      "title": "1,000 miles or 30 hours of seat time since your Sprout",
+      "proof": "Odometer photos, GPS logs, or hours a stamper can vouch for",
       "capstone": false,
       "status": "active",
       "added": "2026-11-24",
@@ -396,9 +397,9 @@
     {
       "number": 32,
       "series": "core",
-      "vibe": "distance",
-      "title": "5,000 miles",
-      "proof": "Odometer photos or GPS logs",
+      "vibe": "seat-time",
+      "title": "5,000 miles or 150 hours",
+      "proof": "Odometer photos, GPS logs, or hours a stamper can vouch for",
       "capstone": false,
       "status": "active",
       "added": "2026-11-24",
@@ -407,9 +408,9 @@
     {
       "number": 33,
       "series": "core",
-      "vibe": "distance",
-      "title": "10,000 miles",
-      "proof": "Odometer photos or GPS logs",
+      "vibe": "seat-time",
+      "title": "10,000 miles or 300 hours",
+      "proof": "Odometer photos, GPS logs, or hours a stamper can vouch for",
       "capstone": false,
       "status": "active",
       "added": "2026-11-24",
@@ -418,9 +419,9 @@
     {
       "number": 34,
       "series": "core",
-      "vibe": "distance",
-      "title": "25,000 miles",
-      "proof": "Odometer photos or GPS logs",
+      "vibe": "seat-time",
+      "title": "25,000 miles or 750 hours",
+      "proof": "Odometer photos, GPS logs, or hours a stamper can vouch for",
       "capstone": false,
       "status": "active",
       "added": "2026-11-24",
@@ -429,9 +430,9 @@
     {
       "number": 35,
       "series": "core",
-      "vibe": "distance",
-      "title": "50,000 miles",
-      "proof": "Odometer photos or GPS logs",
+      "vibe": "seat-time",
+      "title": "50,000 miles or 1,500 hours",
+      "proof": "Odometer photos, GPS logs, or hours a stamper can vouch for",
       "capstone": false,
       "status": "active",
       "added": "2026-11-24",
@@ -440,9 +441,9 @@
     {
       "number": 36,
       "series": "core",
-      "vibe": "distance",
-      "title": "300-mile day",
-      "proof": "GPS log",
+      "vibe": "seat-time",
+      "title": "300-mile day, or 5 hours of riding in one day",
+      "proof": "GPS log, or a stamper who was there",
       "capstone": false,
       "status": "active",
       "added": "2026-11-24",
@@ -451,9 +452,9 @@
     {
       "number": 37,
       "series": "core",
-      "vibe": "distance",
-      "title": "500-mile day",
-      "proof": "GPS log",
+      "vibe": "seat-time",
+      "title": "500-mile day, or 8 hours of riding in one day",
+      "proof": "GPS log, or a stamper who was there",
       "capstone": false,
       "status": "active",
       "added": "2026-11-24",
@@ -462,7 +463,7 @@
     {
       "number": 38,
       "series": "core",
-      "vibe": "distance",
+      "vibe": "seat-time",
       "title": "1,000 miles in 24 hours (SaddleSore-style)",
       "proof": "GPS log plus timestamped gas receipts",
       "capstone": false,
@@ -473,7 +474,7 @@
     {
       "number": 39,
       "series": "core",
-      "vibe": "distance",
+      "vibe": "seat-time",
       "title": "Another state and back in one day",
       "proof": "GPS log",
       "capstone": false,
@@ -484,7 +485,7 @@
     {
       "number": 40,
       "series": "core",
-      "vibe": "distance",
+      "vibe": "seat-time",
       "title": "Four states in one day",
       "proof": "GPS log",
       "capstone": false,
@@ -495,7 +496,7 @@
     {
       "number": 41,
       "series": "core",
-      "vibe": "distance",
+      "vibe": "seat-time",
       "title": "Lake Michigan Circle Tour, or your region's big loop",
       "proof": "GPS log",
       "capstone": false,
@@ -506,7 +507,7 @@
     {
       "number": 42,
       "series": "core",
-      "vibe": "distance",
+      "vibe": "seat-time",
       "title": "Cross the Mackinac Bridge on two wheels",
       "proof": "GPS log or photo with the bike on the bridge approach",
       "capstone": false,
@@ -517,7 +518,7 @@
     {
       "number": 43,
       "series": "core",
-      "vibe": "distance",
+      "vibe": "seat-time",
       "title": "Ride to a lot day or meet in another state",
       "proof": "Host crew confirms",
       "capstone": false,
@@ -528,9 +529,9 @@
     {
       "number": 44,
       "series": "core",
-      "vibe": "distance",
-      "title": "100,000 miles on one bike",
-      "proof": "Odometer checked by a witness, in person",
+      "vibe": "seat-time",
+      "title": "100,000 miles or 3,000 hours on one bike",
+      "proof": "Odometer checked by a stamper in person, or hours a stamper can vouch for",
       "capstone": true,
       "status": "active",
       "added": "2026-11-24",
