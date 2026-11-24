@@ -1,6 +1,6 @@
 // The Proper BoltStack accomplishment list.
 // To add an approved proposal: add a line in the right vibe, give it the next unused number,
-// and keep `capstone: true` on at most one item per vibe.
+// and keep `capstone: true` on at most one item per vibe. Numbers are permanent: never reuse a retired one.
 
 window.VIBES = [
   { key: "roots",      name: "Roots",               color: "#e8742c", note: "Orange (terracotta)" },
@@ -15,8 +15,8 @@ window.VIBES = [
 window.ACCOMPLISHMENTS = [
   // Roots
   { n: 1,  vibe: "roots", title: "The Sprout: show up to your first lot day or group ride", proof: "Whoever brought you" },
-  { n: 2,  vibe: "roots", title: "Pass a rider course (MSF Basic or equivalent)", proof: "Course card shown to a witness" },
-  { n: 3,  vibe: "roots", title: "Get your motorcycle endorsement", proof: "License shown to a witness (nothing recorded)" },
+  { n: 2,  vibe: "roots", title: "Get your motorcycle endorsement, through a rider course or the state test", proof: "Course card or license shown to a witness (nothing recorded)" },
+  { n: 3,  vibe: "roots", title: "Pick up a dropped bike the right way: back to the bike, legs do the lifting", proof: "Witnessed at a lot day" },
   { n: 4,  vibe: "roots", title: "Walk a witness through a full pre-ride check (T-CLOCS) on your bike", proof: "Witnessed" },
   { n: 5,  vibe: "roots", title: "Full-lock U-turn inside two parking spaces, no foot down", proof: "Witnessed at a lot day" },
   { n: 6,  vibe: "roots", title: "Emergency stop from 30 mph to a cone mark", proof: "Witnessed at a lot day" },
@@ -84,13 +84,13 @@ window.ACCOMPLISHMENTS = [
   // Grit
   { n: 61, vibe: "grit", title: "A full ride of 30+ miles in rain", proof: "Witness at the meetup, weather record" },
   { n: 62, vibe: "grit", title: "Ride below 40°F", proof: "Witness at the meetup, weather record" },
-  { n: 63, vibe: "grit", title: "Ride below 32°F", proof: "Witness at the meetup, weather record" },
+  { n: 63, vibe: "grit", title: "Commute on the bike every workday for a month", proof: "GPS logs" },
   { n: 64, vibe: "grit", title: "Two hours of riding in 95°F+", proof: "GPS log, weather record" },
   { n: 65, vibe: "grit", title: "100 miles at night in one ride", proof: "GPS log" },
   { n: 66, vibe: "grit", title: "20+ miles of gravel or dirt", proof: "GPS log" },
   { n: 67, vibe: "grit", title: "50+ miles with gusts over 25 mph", proof: "GPS log, weather record" },
-  { n: 68, vibe: "grit", title: "First ride of the season before April 1", proof: "Witnessed or GPS log" },
-  { n: 69, vibe: "grit", title: "Ride in December", proof: "Witnessed or GPS log" },
+  { n: 68, vibe: "grit", title: "Moto-camp: ride out, sleep next to the bike, ride home", proof: "GPS log and a photo of camp with the bike" },
+  { n: 69, vibe: "grit", title: "300 miles in one day on a stunt-built bike", proof: "GPS log, and the bike seen by a witness" },
   { n: 70, vibe: "grit", title: "Ride on New Year's Day", proof: "Witnessed" },
   { n: 71, vibe: "grit", title: "Show up to a rained-on lot day and ride anyway", proof: "Witnessed" },
   { n: 72, vibe: "grit", title: "Ride in every month of a calendar year", proof: "GPS logs or witnesses, one per month", capstone: true },
@@ -106,7 +106,7 @@ window.ACCOMPLISHMENTS = [
   { n: 80, vibe: "wrench", title: "Install a crash cage or subcage", proof: "Witnessed" },
   { n: 81, vibe: "wrench", title: "Check valve clearances", proof: "Witnessed" },
   { n: 82, vibe: "wrench", title: "Track down an electrical fault with a multimeter", proof: "Witnessed" },
-  { n: 83, vibe: "wrench", title: "Sync throttle bodies or carbs", proof: "Witnessed" },
+  { n: 83, vibe: "wrench", title: "Install stunt controls: a hand brake or a 12 o'clock bar", proof: "Witnessed" },
   { n: 84, vibe: "wrench", title: "A roadside fix that gets you home", proof: "Riding partner" },
   { n: 85, vibe: "wrench", title: "Fix someone else's bike at a meet", proof: "The owner, plus a witness" },
   { n: 86, vibe: "wrench", title: "Bring a dead bike back to riding", proof: "Witnessed before and after, including the first ride", capstone: true },
@@ -115,7 +115,7 @@ window.ACCOMPLISHMENTS = [
   { n: 87,  vibe: "degenerate", title: "Tried to ride off with the disc lock on", proof: "Witnessed" },
   { n: 88,  vibe: "degenerate", title: "Dropped it at 0 mph with an audience", proof: "Witnessed" },
   { n: 89,  vibe: "degenerate", title: "Revved at a green light in neutral while people watched", proof: "Witnessed" },
-  { n: 90,  vibe: "degenerate", title: "Rode off with the kickstand down", proof: "Witnessed" },
+  { n: 90,  vibe: "degenerate", title: "Couldn't figure out why it wouldn't start, and the kill switch was off", proof: "Witnessed" },
   { n: 91,  vibe: "degenerate", title: "First get-off you walked away from", proof: "Witnessed" },
   { n: 92,  vibe: "degenerate", title: "The calf burn from the exhaust", proof: "Witnessed, and the mark shown" },
   { n: 93,  vibe: "degenerate", title: "A zip-tie repair that held for 500+ miles", proof: "Witness saw the zip tie, then the odometer" },
