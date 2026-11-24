@@ -52,6 +52,7 @@ var FORMSPREE_FORM_ID = "mgakrpob";
   vibes.forEach(function (v) { addChip(v.key, v.name, v.color); });
 
   // --- List ---
+  var openVibes = {};
   var search = document.getElementById("search");
   var groups = document.getElementById("groups");
   var count = document.getElementById("count");
@@ -69,11 +70,20 @@ var FORMSPREE_FORM_ID = "mgakrpob";
       if (!list.length) return;
       shown += list.length;
 
-      var wrap = document.createElement("div"); wrap.className = "vibe";
-      var head = document.createElement("div"); head.className = "vibe-head";
+      var wrap = document.createElement("details"); wrap.className = "vibe";
+      wrap.dataset.vibe = v.key;
+      // Closed by default; opened when filtering to one vibe or searching, or if the rider opened it.
+      wrap.open = !!(q || active === v.key || openVibes[v.key]);
+      wrap.addEventListener("toggle", function () { if (!q && active === "all") openVibes[v.key] = wrap.open; });
+      var sum = document.createElement("summary");
       var icon = document.createElement("span"); icon.className = "washer-icon"; swatch(icon, v.color);
       var h = document.createElement("h3"); h.textContent = v.name;
-      head.appendChild(icon); head.appendChild(h); wrap.appendChild(head);
+      var meta = document.createElement("span"); meta.className = "meta";
+      var total = items.filter(function (it) { return it.vibe === v.key; }).length;
+      meta.textContent = q ? list.length + " of " + total + " match" : total + " propers";
+      var chev = document.createElement("span"); chev.className = "chev"; chev.setAttribute("aria-hidden", "true"); chev.textContent = "\u203A";
+      sum.appendChild(icon); sum.appendChild(h); sum.appendChild(meta); sum.appendChild(chev);
+      wrap.appendChild(sum);
       var note = document.createElement("p"); note.className = "vibe-note"; note.textContent = v.note; wrap.appendChild(note);
 
       var ol = document.createElement("ol"); ol.className = "items";
@@ -102,6 +112,10 @@ var FORMSPREE_FORM_ID = "mgakrpob";
   render();
 
   // --- Proposal form ---
+  var fold = document.getElementById("propose-fold");
+  function openFoldFromHash() { if (location.hash === "#propose") fold.open = true; }
+  window.addEventListener("hashchange", openFoldFromHash);
+  openFoldFromHash();
   var form = document.getElementById("propose-form");
   var select = document.getElementById("vibe-select");
   var status = document.getElementById("form-status");
