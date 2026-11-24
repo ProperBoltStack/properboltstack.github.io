@@ -4,9 +4,21 @@
 // https://formspree.io/f/XXXXXXXX) and paste it below. Until then the form stays switched off.
 var FORMSPREE_FORM_ID = "mgakrpob";
 
-(function () {
-  var vibes = window.VIBES;
-  var items = window.ACCOMPLISHMENTS;
+// The list itself lives in data/accomplishments.json. Only active items are shown.
+fetch("data/accomplishments.json", { cache: "no-cache" })
+  .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(function (data) {
+    var items = data.accomplishments
+      .filter(function (a) { return a.status === "active"; })
+      .map(function (a) { return { n: a.number, vibe: a.vibe, title: a.title, proof: a.proof, capstone: a.capstone, series: a.series }; });
+    init(data.vibes, items);
+  })
+  .catch(function () {
+    document.getElementById("groups").innerHTML =
+      '<p class="empty">The list didn\'t load. Refresh the page to try again.</p>';
+  });
+
+function init(vibes, items) {
   var byKey = {};
   vibes.forEach(function (v) { byKey[v.key] = v; });
 
@@ -158,4 +170,4 @@ var FORMSPREE_FORM_ID = "mgakrpob";
       status.textContent = "That didn't go through. Give it a minute and try again.";
     }).then(function () { submit.disabled = false; });
   });
-})();
+}
