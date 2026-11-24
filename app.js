@@ -94,7 +94,7 @@ var FORMSPREE_FORM_ID = "";
       groups.appendChild(wrap);
     });
     if (!shown) {
-      var e = document.createElement("p"); e.className = "empty"; e.textContent = "Nothing matches that. Maybe it's one to propose.";
+      var e = document.createElement("p"); e.className = "empty"; e.textContent = "Nothing matches that. Sounds like one to propose.";
       groups.appendChild(e);
     }
     count.textContent = shown === items.length ? "Showing all " + shown + "." : "Showing " + shown + " of " + items.length + ".";
@@ -122,7 +122,7 @@ var FORMSPREE_FORM_ID = "";
     var data = new FormData(form);
     if (!data.get("accomplishment") || !data.get("vibe") || !data.get("proof")) {
       status.className = "status err";
-      status.textContent = "Fill in the accomplishment, the vibe, and how it gets verified.";
+      status.textContent = "Fill in the accomplishment, the vibe, and how a stamper would check it.";
       return;
     }
     submit.disabled = true;
@@ -135,13 +135,13 @@ var FORMSPREE_FORM_ID = "";
       if (r.ok) {
         form.reset();
         status.className = "status ok";
-        status.textContent = "Got it. If it makes the list, you'll see it here.";
+        status.textContent = "Got it, thanks. If it makes the list, you'll see it here.";
       } else {
         throw new Error();
       }
     }).catch(function () {
       status.className = "status err";
-      status.textContent = "That didn't go through. Try again in a minute.";
+      status.textContent = "That didn't go through. Give it a minute and try again.";
     }).then(function () { submit.disabled = false; });
   });
 })();

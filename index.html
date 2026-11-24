@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Proper BoltStack | Get your propers</title>
-  <meta name="description" content="Proper BoltStack: 100 rider accomplishments, each earned as a colored washer stamped by the rider who witnessed it. Propose a new one.">
+  <meta name="description" content="Proper BoltStack: 100 riding accomplishments, each one earned as a colored washer and stamped by the rider who saw it happen. You can propose new ones too.">
   <style>
     :root {
       --bg: #111214;
@@ -120,7 +120,7 @@
   <header class="hero wrap">
     <h1>Proper <span>BoltStack</span></h1>
     <p class="tagline">Get your propers.</p>
-    <p class="lead">Every accomplishment is one colored washer, stamped by the rider who saw you do it, threaded onto a rod on your cage. Nothing on it can be bought. Your stack is your history, read from the clamp outward.</p>
+    <p class="lead">Every time you pull off something worth respect, you earn a colored washer. The rider who saw you do it stamps it, and it goes on a bolt on your cage. You can't buy one. Over time, your stack tells people what kind of rider you are without you having to say a word.</p>
     <div class="hero-actions">
       <a class="btn primary" href="#list">See all 100</a>
       <a class="btn" href="#propose">Propose one</a>
@@ -132,12 +132,12 @@
     <section class="wrap" id="how">
       <h2>How it works</h2>
       <div class="grid">
-        <div class="tile"><h3>One washer, one proper</h3><p>Each accomplishment earns one anodized M10 washer in its vibe's color.</p></div>
-        <div class="tile"><h3>The stamper</h3><p>A rider with a stack watches it happen or checks the proof, then stamps the date and their initials into the washer. No stamp, no proper.</p></div>
-        <div class="tile"><h3>The Sprout comes first</h3><p>Your first proper comes from whoever brought you to your first lot day or group ride.</p></div>
-        <div class="tile"><h3>Capstones</h3><p>One accomplishment in five of the vibes earns a bigger 30 mm washer that stands out in the stack.</p></div>
-        <div class="tile"><h3>Stunts stay on the lot</h3><p>Stunt propers are only witnessed at lot days or closed venues.</p></div>
-        <div class="tile"><h3>Earned, never traded</h3><p>Blank washers can be shared. Stamped ones stay with the rider who earned them.</p></div>
+        <div class="tile"><h3>One washer, one proper</h3><p>Each accomplishment gets you one washer. The color tells people which vibe it came from.</p></div>
+        <div class="tile"><h3>The stamper</h3><p>Someone who already has a stack has to see it happen or check the proof. Then they stamp the date and their initials into the washer. If there's no stamp, it doesn't count.</p></div>
+        <div class="tile"><h3>The Sprout comes first</h3><p>Your first washer comes from whoever brought you out to your first lot day or group ride. Everybody can tell you who gave them theirs.</p></div>
+        <div class="tile"><h3>Capstones</h3><p>Five of the vibes have one big accomplishment that gets a larger washer, so it stands out in the stack.</p></div>
+        <div class="tile"><h3>Stunts stay on the lot</h3><p>Stunt washers only get stamped at lot days or closed venues. Nobody's earning one on the street.</p></div>
+        <div class="tile"><h3>Earned, never traded</h3><p>Blank washers can be passed around. Once one's stamped, it stays with the rider who earned it.</p></div>
       </div>
     </section>
 
@@ -157,7 +157,7 @@
 
     <section class="wrap" id="list">
       <h2>The 100</h2>
-      <p class="muted">Every accomplishment names its proof, so a stamper never has to take anyone's word for it.</p>
+      <p class="muted">Each one lists how it gets proved, so nobody has to take anybody's word for it.</p>
       <div class="controls" id="chips" role="group" aria-label="Filter by vibe"></div>
       <div class="controls">
         <input class="search" id="search" type="search" placeholder="Search accomplishments" aria-label="Search accomplishments">
@@ -168,9 +168,9 @@
 
     <section class="wrap" id="propose">
       <h2>Propose one</h2>
-      <p class="muted">Got a feat that deserves a washer? Send it in. Every proposal gets reviewed, and the good ones make the list. It has to be something a stamper can verify: seen in person, or proved with a record.</p>
+      <p class="muted">Think something's missing? Send it in. I read every one, and the good ones get added. Just make sure it's something a stamper can actually check, either by seeing it happen or with some kind of record.</p>
       <form class="propose" id="propose-form" novalidate>
-        <div class="notice" id="form-off" hidden>Proposals open soon. Check back shortly.</div>
+        <div class="notice" id="form-off" hidden>Proposals aren't open yet. Check back soon.</div>
         <label>The accomplishment
           <input name="accomplishment" required maxlength="140" placeholder="e.g. Wheelie the full length of the lot">
         </label>
@@ -182,10 +182,10 @@
             <input name="name" maxlength="60">
           </label>
         </div>
-        <label>How would a stamper verify it?
-          <textarea name="proof" required maxlength="400" placeholder="Witnessed live? Ride leader confirms? GPS log? Be specific."></textarea>
+        <label>How would a stamper check it?
+          <textarea name="proof" required maxlength="400" placeholder="Seen in person? Ride leader backs it up? GPS log? Be specific."></textarea>
         </label>
-        <label>Why it deserves a washer <span class="hint">Optional</span>
+        <label>Why it should get a washer <span class="hint">Optional</span>
           <textarea name="why" maxlength="600"></textarea>
         </label>
         <label>Email <span class="hint">Optional, only if you want a reply</span>
@@ -201,7 +201,7 @@
   </main>
 
   <footer class="wrap">
-    Proper BoltStack · Southwest Michigan · Ride your own ride, earn your own stack.
+    Proper BoltStack · Southwest Michigan · Ride your own ride, and earn your own stack.
   </footer>
 
   <script src="accomplishments.js"></script>

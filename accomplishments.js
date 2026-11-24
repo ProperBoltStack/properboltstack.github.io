@@ -4,12 +4,12 @@
 
 window.VIBES = [
   { key: "roots",      name: "Roots",               color: "#e8742c", note: "Orange (terracotta)" },
-  { key: "stunts",     name: "Stunts",              color: "#d62a2a", note: "Red. Witnessed live at a lot day or closed venue only." },
+  { key: "stunts",     name: "Stunts",              color: "#d62a2a", note: "Red. These only get stamped in person, at a lot day or a closed venue." },
   { key: "distance",   name: "Distance",            color: "#2f6fd6", note: "Blue" },
   { key: "community",  name: "Community",           color: "#2e9b4e", note: "Green" },
-  { key: "grit",       name: "Grit",                color: "#1c1c1c", note: "Black. Weather is proved by a witness at the meetup plus the hourly weather record." },
-  { key: "wrench",     name: "Wrench",              color: "#c9a227", note: "Gold. Work is witnessed in person." },
-  { key: "degenerate", name: "Friendly Degenerate", color: "#7b3fbf", note: "Purple. No self-nominations: a witness has to rat you out." }
+  { key: "grit",       name: "Grit",                color: "#1c1c1c", note: "Black. For weather, a stamper sees you at the meetup and checks the weather report for that hour." },
+  { key: "wrench",     name: "Wrench",              color: "#c9a227", note: "Gold. Someone has to watch you do the work." },
+  { key: "degenerate", name: "Friendly Degenerate", color: "#7b3fbf", note: "Purple. You can't put yourself in for these. Somebody who saw it has to rat you out." }
 ];
 
 window.ACCOMPLISHMENTS = [
