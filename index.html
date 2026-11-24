@@ -24,7 +24,8 @@
     body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 17px; line-height: 1.55; }
     a { color: var(--accent); }
     .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
-    section { padding: 56px 0; border-top: 1px solid var(--line); }
+    section { border-top: 1px solid var(--line); }
+    section.wrap { padding-top: 48px; padding-bottom: 48px; }
     h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 12px; }
     h2 { font-size: 28px; text-transform: uppercase; letter-spacing: 0.04em; }
     p { margin: 0 0 14px; }
@@ -106,6 +107,10 @@
     .status.err { color: #ff8a80; }
     .notice { background: var(--surface-2); border: 1px dashed var(--line); border-radius: 8px; padding: 12px 14px; color: var(--muted); font-size: 15px; }
 
+    ol.steps { margin: 0; padding-left: 22px; display: grid; gap: 10px; max-width: 700px; }
+    ol.steps li::marker { color: var(--accent); font-weight: 700; }
+    p.notice { max-width: 700px; }
+
     footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
 
     @media (max-width: 620px) {
@@ -120,9 +125,10 @@
   <header class="hero wrap">
     <h1>Proper <span>BoltStack</span></h1>
     <p class="tagline">Get your propers.</p>
-    <p class="lead">Every time you pull off something worth respect, you earn a colored washer. The rider who saw you do it stamps it, and it goes on a bolt on your cage. You can't buy one. Over time, your stack tells people what kind of rider you are without you having to say a word.</p>
+    <p class="lead">Every time you pull off something worth respect, you earn a colored washer. The rider who saw you do it stamps it, and it goes on a bolt on your cage. You can't buy your way onto it. You earn it first, then you pick it up at the BoltStack table. Over time, your stack tells people what kind of rider you are without you having to say a word.</p>
     <div class="hero-actions">
       <a class="btn primary" href="#list">See all 100</a>
+      <a class="btn" href="#lot-days">Lot days</a>
       <a class="btn" href="#propose">Propose one</a>
     </div>
     <div class="rod" id="rod" aria-hidden="true"></div>
@@ -137,8 +143,19 @@
         <div class="tile"><h3>The Sprout comes first</h3><p>Your first washer comes from whoever brought you out to your first lot day or group ride. Everybody can tell you who gave them theirs.</p></div>
         <div class="tile"><h3>Capstones</h3><p>Five of the vibes have one big accomplishment that gets a larger washer, so it stands out in the stack.</p></div>
         <div class="tile"><h3>Stunts stay on the lot</h3><p>Stunt washers only get stamped at lot days or closed venues. Nobody's earning one on the street.</p></div>
-        <div class="tile"><h3>Earned, never traded</h3><p>Blank washers can be passed around. Once one's stamped, it stays with the rider who earned it.</p></div>
+        <div class="tile"><h3>Earn it, then get it proper</h3><p>You can't buy a washer you haven't earned. Once a stamper signs off, you pay a few bucks at the BoltStack table for the engraved washer and the stamping. After that it's yours for good.</p></div>
       </div>
+    </section>
+
+    <section class="wrap" id="steps">
+      <h2>Getting it proper</h2>
+      <ol class="steps">
+        <li><strong>Pull it off.</strong> Do the thing in front of someone who already has a stack, or bring them the proof.</li>
+        <li><strong>Get the nod.</strong> The stamper signs off.</li>
+        <li><strong>Hit the table.</strong> Come find the BoltStack table and pay for your washer.</li>
+        <li><strong>Get stamped proper.</strong> The stamper strikes the date and their initials into it, right there.</li>
+        <li><strong>Stack it.</strong> Thread it on next to your last one.</li>
+      </ol>
     </section>
 
     <section class="wrap" id="language">
@@ -164,6 +181,18 @@
       </div>
       <p class="count" id="count" aria-live="polite"></p>
       <div id="groups"></div>
+    </section>
+
+    <section class="wrap" id="flair">
+      <h2>Flair</h2>
+      <p>Not everything on a stack has to be earned. I 3D print flair that rides right next to your propers: lot day tokens that prove you were there, crew tokens, dividers between your colors, and end caps. Those you can just buy.</p>
+      <p class="muted">The rule is simple: metal is earned, plastic is flair. A proper is always a round metal washer, and flair never is, so nobody mixes them up. I'm working on the first batch now.</p>
+    </section>
+
+    <section class="wrap" id="lot-days">
+      <h2>Lot days</h2>
+      <p>The table goes wherever the riders are. I'll be at as many lot days as I can get to, and I'm hosting some too. That's where you get your propers, meet people, and see what everybody's been up to.</p>
+      <p class="notice">No dates posted yet. They'll go up here as soon as they're set.</p>
     </section>
 
     <section class="wrap" id="propose">
