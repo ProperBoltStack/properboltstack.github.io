@@ -15,3 +15,17 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/check_list.py
+
+  # Loads the site in a real browser and makes sure the list, the rod,
+  # the filters and the proposal form all work. Takes about a minute.
+  smoke:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/smoke_test.py

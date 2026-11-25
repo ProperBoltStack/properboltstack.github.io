@@ -8,6 +8,7 @@ How the site works and how to change it, without needing to touch the front-end 
 | --- | --- | --- |
 | `data/accomplishments.json` | The list: vibes, series and every accomplishment. The only copy anywhere. | Any time the list changes |
 | `scripts/check_list.py` | Checks the list for mistakes. GitHub runs it on every push. | Rarely |
+| `scripts/smoke_test.py` | Loads the site in a real browser and checks the list, the rod, the filters and the proposal form. GitHub runs it after the list check. | Rarely |
 | `index.html` | The page's wording and layout | When the copy changes |
 | `app.js` | Loads the list, builds the vibe sections, sends proposals to Formspree | Rarely |
 
@@ -20,12 +21,12 @@ The site is GitHub Pages: whatever is on the `main` branch is live at https://pr
 1. Open `data/accomplishments.json` on GitHub and click the pencil icon.
 2. Make the change and click **Commit changes**.
 3. Wait a minute or two, then check the site.
-4. If a red X shows up next to your commit, click it. The checker says exactly what's wrong.
+4. If a red X shows up next to your commit, click it. "check" means the list has a mistake; "smoke" means the page itself broke. Either one says exactly what's wrong.
 
 ### On your computer
 
 1. Edit `data/accomplishments.json` in VS Code (it highlights JSON mistakes as you type).
-2. Run `python scripts/check_list.py`.
+2. Run `python scripts/check_list.py`. If you changed `index.html` or `app.js`, also run `python scripts/smoke_test.py` (one-time setup: `pip install playwright` then `python -m playwright install chromium`).
 3. Commit and push.
 
 To preview the site locally, run `python -m http.server` in the repo folder and open http://localhost:8000. Opening `index.html` straight from the folder won't load the list, because browsers block that.
