@@ -30,19 +30,39 @@ function init(vibes, items) {
     if (color === "#1c1c1c") el.style.boxShadow = "inset 0 0 0 1px #6b7178";
   }
 
-  // --- Hero rod: one washer per vibe, capstones taller ---
+  // --- Hero rod: every proper on the list, in number order, capstones taller ---
+  // Each washer is a button: tapping it opens that item in the list below.
+  var byNum = {};
   var rod = document.getElementById("rod");
   var start = document.createElement("div"); start.className = "bar start"; rod.appendChild(start);
-  vibes.forEach(function (v) {
-    for (var i = 0; i < 3; i++) {
-      var w = document.createElement("div");
-      w.className = "washer" + (i === 2 && v.key !== "roots" && v.key !== "degenerate" ? " cap" : "");
-      swatch(w, v.color);
-      rod.appendChild(w);
-    }
+  var washers = document.createElement("div"); washers.className = "washers"; rod.appendChild(washers);
+  items.forEach(function (it) {
+    var v = byKey[it.vibe];
+    var w = document.createElement("button");
+    w.type = "button";
+    w.className = "washer" + (it.capstone ? " cap" : "");
+    w.style.background = v.color;
+    if (v.color === "#1c1c1c") w.classList.add("dark");
+    w.title = "#" + String(it.n).padStart(3, "0") + " " + it.title;
+    w.setAttribute("aria-label", "#" + it.n + ": " + it.title + " (" + v.name + ")");
+    w.addEventListener("click", function () { showItem(it.n); });
+    washers.appendChild(w);
   });
   var nut = document.createElement("div"); nut.className = "nut"; rod.appendChild(nut);
   var end = document.createElement("div"); end.className = "bar end"; rod.appendChild(end);
+
+  // Open the item's vibe in the list, scroll to it and flash it.
+  function showItem(n) {
+    search.value = "";
+    active = "all";
+    Array.prototype.forEach.call(chips.children, function (c, i) { c.setAttribute("aria-pressed", i === 0 ? "true" : "false"); });
+    var it = items.filter(function (x) { return x.n === n; })[0];
+    openVibes[it.vibe] = true;
+    render();
+    var li = document.getElementById("p-" + n);
+    li.scrollIntoView({ behavior: "smooth", block: "center" });
+    li.classList.remove("flash"); void li.offsetWidth; li.classList.add("flash");
+  }
 
   // --- Filter chips ---
   var active = "all";
@@ -111,6 +131,7 @@ function init(vibes, items) {
           t.appendChild(cap);
         }
         var p = document.createElement("span"); p.className = "proof"; p.textContent = it.proof;
+        li.id = "p-" + it.n;
         li.appendChild(num); li.appendChild(t); li.appendChild(p);
         ol.appendChild(li);
       });
