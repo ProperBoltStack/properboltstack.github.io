@@ -103,7 +103,12 @@ with sync_playwright() as p:
 
         # Proposal form: opens from the link, sends the right fields, shows a thank-you.
         page.click('a[href="#propose"]')
-        check("Propose link opens the form", page.locator("#propose-fold").evaluate("e => e.open"))
+        try:
+            page.wait_for_function("document.getElementById('propose-fold').open")
+            opened = True
+        except Exception:
+            opened = False
+        check("Propose link opens the form", opened)
         form_on = page.locator("#form-off").is_hidden()
         check("form is switched on", form_on, "FORMSPREE_FORM_ID in app.js is empty")
         if not form_on:
