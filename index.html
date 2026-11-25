@@ -43,12 +43,18 @@
     .btn:hover { border-color: var(--accent); }
 
     /* Washer rod illustration */
-    .rod { display: flex; align-items: center; margin: 36px 0 0; height: 46px; }
-    .rod .bar { height: 10px; background: linear-gradient(#9aa0a6, #5e646a); border-radius: 2px; }
-    .rod .bar.start { width: 28px; }
-    .rod .bar.end { flex: 1; max-width: 160px; }
-    .rod .washer { width: 12px; height: 44px; border-radius: 3px; margin: 0 1px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18); }
-    .rod .washer.cap { height: 58px; width: 14px; }
+    .rod { display: flex; align-items: center; margin: 36px 0 0; height: 62px; }
+    .rod .bar { height: 10px; background: linear-gradient(#9aa0a6, #5e646a); border-radius: 2px; flex: none; }
+    .rod .bar.start { width: 24px; }
+    .rod .bar.end { flex: 1 1 40px; max-width: 120px; }
+    .rod .washers { display: flex; align-items: center; gap: 1px; flex: 0 1 640px; min-width: 0; }
+    .rod .washer { flex: 1 1 0; min-width: 2px; height: 40px; padding: 0; border: 0; border-radius: 1px; cursor: pointer; transition: transform .1s; }
+    .rod .washer.cap { height: 58px; }
+    .rod .washer.dark { box-shadow: inset 0 0 0 1px #6b7178; }
+    .rod .washer:hover, .rod .washer:focus-visible { transform: scaleY(1.15); outline: none; filter: brightness(1.25); }
+    .rod-caption { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+    ol.items li.flash { animation: flash 1.6s ease-out; }
+    @keyframes flash { 0%, 30% { box-shadow: inset 0 0 0 2px var(--accent); } 100% { box-shadow: inset 0 0 0 2px transparent; } }
     .rod .nut { width: 16px; height: 26px; background: #b9bec4; border-radius: 4px 9px 9px 4px; }
 
     /* How it works */
@@ -143,13 +149,14 @@
   <header class="hero wrap">
     <h1>Proper <span>BoltStack</span></h1>
     <p class="tagline">Get your propers.</p>
-    <p class="lead">Every time you pull off something worth respect, you earn a colored washer. The rider who saw you do it stamps it, and it goes on a bolt on your bike. You can't buy your way onto it. You earn it first, then you pick it up at the BoltStack table. Over time, your stack tells people what kind of rider you are without you having to say a word.</p>
+    <p class="lead">Every time you pull off something worth respect, you earn a colored washer. The rider who saw you do it stamps it, and it goes on a bolt on your cage. You can't buy your way onto it. You earn it first, then you pick it up at the BoltStack table. Over time, your stack tells people what kind of rider you are without you having to say a word.</p>
     <div class="hero-actions">
       <a class="btn primary" href="#list">See the list</a>
       <a class="btn" href="#lot-days">Lot days</a>
       <a class="btn" href="#propose">Propose one</a>
     </div>
-    <div class="rod" id="rod" aria-hidden="true"></div>
+    <div class="rod" id="rod" role="group" aria-label="Every proper on the list, in order"></div>
+    <p class="rod-caption">A full stack: every proper on the list, in order. Tap one to see what it is.</p>
   </header>
 
   <main>
